@@ -8,6 +8,7 @@ class ApiClient {
       'application/x-www-form-urlencoded';
   }
 
+  // eslint-disable-next-line class-methods-use-this
   private _setToken() {
     console.log('set token');
   }

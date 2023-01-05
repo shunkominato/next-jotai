@@ -2,9 +2,9 @@ import { FC } from 'react';
 import { useForm, zodResolver } from '@mantine/form';
 import { PasswordInput } from '@mantine/core';
 import { Button } from '@/components/ui/elements/button/Button';
+import { TextInput } from '@/components/ui/elements/TextInput/TextInput';
 import { SignUpFormTypes, validationSchema } from './validation';
 import { useSignUp } from './useSignUp';
-import { TextInput } from '@/components/ui/elements/TextInput/TextInput';
 import { buttonStyles, inputStyles } from './style';
 
 export const SignUpForm: FC = () => {

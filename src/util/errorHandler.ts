@@ -22,8 +22,6 @@ export const errorHandler = ({
   }
 
   window.alert(
-    alertMessage
-      ? alertMessage
-      : '予期せぬエラーが発生しました。しばらくしてから再度お試しください'
+    alertMessage || '予期せぬエラーが発生しました。しばらくしてから再度お試しください'
   );
 };

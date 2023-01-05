@@ -1,8 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
-import router from 'next/router';
 import { AxiosError } from 'axios';
-import { todoStatusApi } from './todoApi';
 import { errorHandler } from '@/util/errorHandler';
+import { todoStatusApi } from './todoApi';
 
 export const useFetchTodoStatus = () => {
   const { data, isLoading, isError } = useQuery({

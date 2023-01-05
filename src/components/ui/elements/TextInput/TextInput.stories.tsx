@@ -5,13 +5,15 @@ export default {
   component: TextInput,
 };
 
+const form = {} as any;
+
 export const basicButton = () => (
   <TextInput
     mt="xs"
     id="email"
     label="メールアドレス"
     placeholder="gmail"
-    form={{}}
+    form={form}
   />
 );
 // export const primaryButton = () => (

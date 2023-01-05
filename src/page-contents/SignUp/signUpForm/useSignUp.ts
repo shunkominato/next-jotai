@@ -1,12 +1,12 @@
 import { useRouter } from 'next/router';
 import { useMutation } from '@tanstack/react-query';
 import { useCallback } from 'react';
-import { SignUpFormTypes } from './validation';
-import { signUpApi, ISignUpApi } from './signupApi';
 import { errorHandler } from '@/util/errorHandler';
 import { AxiosError } from 'axios';
 import { userAtom } from '@/stores/user/userAtom';
 import { useSetAtom } from 'jotai';
+import { signUpApi, ISignUpApi } from './signupApi';
+import { SignUpFormTypes } from './validation';
 
 export const useSignUp = () => {
   const router = useRouter();

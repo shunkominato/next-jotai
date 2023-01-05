@@ -30,7 +30,6 @@ module.exports = {
   ],
   ignorePatterns: ['.eslintrc.*', 'next.config.*'],
   rules: {
-    curly: ['error', 'all'],
     'react/function-component-definition': 'off',
     'arrow-body-style': 'off',
     'no-unused-vars': 'off',
@@ -44,8 +43,11 @@ module.exports = {
     'no-underscore-dangle': 'off',
     '@typescript-eslint/no-unsafe-member-access': 'warn',
     '@typescript-eslint/naming-convention': 'warn',
+    '@typescript-eslint/no-unsafe-assignment': 'warn',
+    'no-unneeded-ternary': 'warn',
     'react/require-default-props': 'off',
     'no-alert': 'off',
+    'react/display-name': 'off',
     curly: 'off',
   },
 };
