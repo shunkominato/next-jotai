@@ -24,7 +24,7 @@ export const Layout: FC<Props> = ({ children, title = 'test' }) => {
       <Header height={56} className={classes.header}>
         <Container>
           <span>
-            {/* <Image src="/logo/" alt="Logo" width={120} height={56} /> */}
+            <Image src="/vercel.svg" alt="Logo" width={120} height={56} />
           </span>
         </Container>
       </Header>
