@@ -28,7 +28,6 @@ export const Button: FC<Props> = memo(
     disabled = false,
     loading = false,
   }) => {
-    console.log('buton');
     return (
       <MButton
         type={type}

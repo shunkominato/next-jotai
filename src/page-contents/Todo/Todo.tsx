@@ -6,7 +6,6 @@ import { TodoList } from './todoList';
 
 export const Todo: FC = () => {
   const user = useAtomValue(userAtom);
-  console.log(user);
   return (
     <>
       {user.name}

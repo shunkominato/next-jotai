@@ -1,22 +1,20 @@
+import { errorHandler } from '@/util/errorHandler';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { AxiosError } from 'axios';
 import { useCallback } from 'react';
 import { addTodoApi } from './addTodoApi';
+import { ERROR_MESSAGES } from './constants';
 import { TodoFormTypes } from './validation';
-
-const onErrorAddTodo = (err: AxiosError) => {
-  console.log(err);
-  window.alert('add Error');
-};
 
 export const useAddTodos = () => {
   const queryClient = useQueryClient();
 
   const { mutate, isLoading, isError } = useMutation(addTodoApi, {
-    onError: onErrorAddTodo,
-    onSuccess: (data) => {
-      console.log(data);
+    onSuccess: () => {
       queryClient.invalidateQueries(['todoList']);
+    },
+    onError: (err: AxiosError) => {
+      errorHandler({ err, alertMessage: ERROR_MESSAGES.TODO_ADD });
     },
   });
 
