@@ -1,0 +1,7 @@
+node_modules/
+jest.config.js
+.next/
+public/
+.storybook/
+postcss.config.js
+tailwind.config.js
