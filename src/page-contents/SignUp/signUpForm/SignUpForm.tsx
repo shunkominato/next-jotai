@@ -1,26 +1,11 @@
-import { FC, useCallback } from 'react';
+import { FC } from 'react';
 import { useForm, zodResolver } from '@mantine/form';
-import { Container, PasswordInput } from '@mantine/core';
+import { PasswordInput } from '@mantine/core';
 import { Button } from '@/components/ui/elements/button/Button';
 import { SignUpFormTypes, validationSchema } from './validation';
 import { useSignUp } from './useSignUp';
 import { TextInput } from '@/components/ui/elements/TextInput/TextInput';
-
-const buttonStyles = {
-  root: {
-    marginTop: 48,
-    height: 72,
-  },
-};
-
-const inputStyles = {
-  input: {
-    height: 56,
-  },
-  innerInput: {
-    height: 56,
-  },
-};
+import { buttonStyles, inputStyles } from './style';
 
 export const SignUpForm: FC = () => {
   const form = useForm<SignUpFormTypes>({
@@ -36,16 +21,6 @@ export const SignUpForm: FC = () => {
 
   return (
     <form className="mt-6" onSubmit={form.onSubmit(handleSignUp)}>
-      {/* <TextInput
-          mt="md"
-          id="email"
-          label="メールアドレスを入力してください（半角）*"
-          placeholder="example@gmail.com"
-          radius="xs"
-          styles={inputStyles}
-          {...form.getInputProps('email')}
-          // form={form}
-        /> */}
       <TextInput
         id="email"
         label="メールアドレスを入力してください（半角）*"

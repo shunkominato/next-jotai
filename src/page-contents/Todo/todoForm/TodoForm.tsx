@@ -34,8 +34,7 @@ export const TodoForm: FC = () => {
         <Button
           type="submit"
           label="追加"
-          // styles={buttonStyles}
-          // disabled={!!form.errors.todo || !form.values.todo}
+          disabled={!!form.errors.todo || !form.values.todo}
           loading={isLoading}
         />
       </form>
