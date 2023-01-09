@@ -1,6 +1,6 @@
-import { API_ERROR_MESSAGES } from '@/constants/errorMessages';
 import { AxiosError } from 'axios';
 import router from 'next/router';
+import { API_ERROR_MESSAGES } from '@/constants/errorMessages';
 
 export const errorHandler = ({
   err,
