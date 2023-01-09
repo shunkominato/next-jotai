@@ -8,7 +8,7 @@ export const useFetchTodos = () => {
     queryKey: ['todoList'],
     queryFn: todoListApi,
     onError: (err: AxiosError) => {
-      errorHandler({ err, alertMessage: '失敗しました' });
+      errorHandler({ err });
     },
   });
 

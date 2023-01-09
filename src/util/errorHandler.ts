@@ -1,3 +1,4 @@
+import { API_ERROR_MESSAGES } from '@/constants/errorMessages';
 import { AxiosError } from 'axios';
 import router from 'next/router';
 
@@ -9,19 +10,15 @@ export const errorHandler = ({
   alertMessage?: string;
 }) => {
   if (err.response?.status === 401) {
-    window.alert(
-      'ログイン状態が無効になりました。続けて操作する場合はログインをしなおしてください。'
-    );
+    window.alert(API_ERROR_MESSAGES.UNAUTHORIZED);
     router.push('/sign_up');
     return;
   }
 
   if (err.message === 'Network Error') {
-    window.alert('通信エラー発生しました。電波の良い場所で再度お試しください');
+    window.alert(API_ERROR_MESSAGES.NETWORK_ERROR);
     return;
   }
 
-  window.alert(
-    alertMessage || '予期せぬエラーが発生しました。しばらくしてから再度お試しください'
-  );
+  window.alert(alertMessage || API_ERROR_MESSAGES.DEFAULT_ERROR);
 };
