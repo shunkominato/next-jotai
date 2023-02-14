@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react';
+import React, { FC, memo, ReactNode } from 'react';
 import { Button as MButton, CSSObject } from '@mantine/core';
 
 interface Props {
@@ -12,7 +12,9 @@ interface Props {
   styles?: Record<'root', string | CSSObject>;
   disabled?: boolean;
   loading?: boolean;
-  onClick?: () => void;
+  leftIcon?: ReactNode;
+  rightIcon?: ReactNode;
+  onClick?: (...any: any) => void | Promise<void>;
 }
 export const Button: FC<Props> = memo(
   ({
@@ -27,6 +29,8 @@ export const Button: FC<Props> = memo(
     styles,
     disabled = false,
     loading = false,
+    leftIcon,
+    rightIcon,
   }) => {
     return (
       <MButton
@@ -40,6 +44,8 @@ export const Button: FC<Props> = memo(
         styles={styles as Record<'root', CSSObject>}
         disabled={disabled}
         loading={loading}
+        leftIcon={leftIcon}
+        rightIcon={rightIcon}
       >
         {label}
       </MButton>

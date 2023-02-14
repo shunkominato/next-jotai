@@ -7,6 +7,7 @@ type Props = {
   id: string;
   radius?: string;
   label: string;
+  required?: boolean;
   styles?: Record<string, Record<string, string | number>>;
   placeholder: string;
   form: UseFormReturnType<any, any>;
@@ -15,8 +16,9 @@ type Props = {
 export const TextInput: FC<Props> = ({
   mt = 'md',
   id,
-  radius = 'md',
+  radius = 'xs',
   label,
+  required,
   styles,
   placeholder,
   form,
@@ -27,6 +29,7 @@ export const TextInput: FC<Props> = ({
       id={id}
       radius={radius}
       label={label}
+      required={required}
       styles={styles}
       placeholder={placeholder}
       {...form.getInputProps(id)}

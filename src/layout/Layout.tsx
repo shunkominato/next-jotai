@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
 import Head from 'next/head';
-import { createStyles, Header, Container } from '@mantine/core';
+import { createStyles, Header, Container, Footer } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import Image from 'next/image';
 import * as defaultStyles from '@/styles/default.styles';
@@ -12,7 +12,7 @@ type Props = {
 
 const useStyles = createStyles((theme) => ({
   header: {
-    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
     // borderBottom: 0,
   },
 }));
@@ -31,6 +31,9 @@ export const Layout: FC<Props> = ({ children, title = 'test' }) => {
       <main className={` ${defaultStyles.fontSize} ${defaultStyles.fontColor}`}>
         {children}
       </main>
+      <Footer height={56}>
+        <Container>aa</Container>
+      </Footer>
     </>
   );
 };
