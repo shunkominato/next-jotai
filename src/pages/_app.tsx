@@ -27,6 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           //   xs: 500,
           //   sm: 800,
           // },
+          // koment
           components: {
             Button: {
               styles: {

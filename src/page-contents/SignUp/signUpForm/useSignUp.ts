@@ -25,12 +25,15 @@ export const useSignUp = () => {
     },
   });
 
-  const handleSignUp = useCallback((signUpFormValue: SignUpFormTypes) => {
-    mutate({
-      email: signUpFormValue.email,
-      password: signUpFormValue.password,
-    });
-  }, []);
+  const handleSignUp = useCallback(
+    (signUpFormValue: SignUpFormTypes) => {
+      mutate({
+        email: signUpFormValue.email,
+        password: signUpFormValue.password,
+      });
+    },
+    [mutate]
+  );
 
   return { handleSignUp, isLoading, isError };
 };
