@@ -9,17 +9,19 @@ export const TwitterButton: FC = memo(() => {
     useSignUpWithTwitter();
 
   return (
-    <Button
+    <MButton
+      // bg="bg-[#03A9F4]"
+      bg="blue.4"
       type="button"
-      label="Twitterで登録する"
       size="md"
-      color="blue.9"
       fullWidth
       loading={isLoading}
-      onClick={handleSignUpWithTwitter}
+      onClick={() => {}}
       leftIcon={
         <Image src="/icon/twitter.svg" alt="Logo" width={36} height={36} />
       }
-    />
+    >
+      Twitterで登録する
+    </MButton>
   );
 });

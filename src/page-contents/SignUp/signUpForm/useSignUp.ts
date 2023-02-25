@@ -5,8 +5,8 @@ import { errorHandler } from '@/util/errorHandler';
 import { AxiosError } from 'axios';
 import { userAtom } from '@/stores/user/userAtom';
 import { useSetAtom } from 'jotai';
+import { AuthFormTypes } from '@/validations/schema/auth/validation';
 import { signUpApi, ISignUpApi } from './signupApi';
-import { SignUpFormTypes } from './validation';
 
 export const useSignUp = () => {
   const router = useRouter();
@@ -26,7 +26,7 @@ export const useSignUp = () => {
   });
 
   const handleSignUp = useCallback(
-    (signUpFormValue: SignUpFormTypes) => {
+    (signUpFormValue: AuthFormTypes) => {
       mutate({
         email: signUpFormValue.email,
         password: signUpFormValue.password,

@@ -4,18 +4,20 @@ import { useForm, zodResolver } from '@mantine/form';
 import { Divider, PasswordInput, Text } from '@mantine/core';
 import { Button } from '@/components/ui/elements/button/Button';
 import { TextInput } from '@/components/ui/elements/TextInput/TextInput';
-import { SignUpFormTypes, validationSchema } from './validation';
+import {
+  AuthFormTypes,
+  authValidationSchema,
+} from '@/validations/schema/auth/validation';
 import { useSignUp } from './useSignUp';
-import { buttonStyles, inputStyles } from './style';
 import { TwitterButton } from './twitterButton/TwitterButton';
 
 export const SignUpForm: FC = () => {
-  const form = useForm<SignUpFormTypes>({
+  const form = useForm<AuthFormTypes>({
     initialValues: {
       email: '',
       password: '',
     },
-    validate: zodResolver(validationSchema),
+    validate: zodResolver(authValidationSchema),
     validateInputOnChange: true,
   });
 

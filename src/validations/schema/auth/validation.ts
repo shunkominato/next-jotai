@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const validationSchema = z.object({
+export const authValidationSchema = z.object({
   email: z
     .string()
     .email('メールアドレスの形式ではありません')
@@ -9,4 +9,4 @@ export const validationSchema = z.object({
   password: z.string().min(1, '入力してください'),
 });
 
-export type SignUpFormTypes = z.infer<typeof validationSchema>;
+export type AuthFormTypes = z.infer<typeof authValidationSchema>;
