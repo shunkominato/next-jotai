@@ -1,9 +1,5 @@
 import apiClient from '@/lib/apiClient';
-
-export type SignUpApiType = {
-  email: string;
-  password: string;
-};
+import { AuthFormTypes } from '@/validations/schema/auth/validation';
 
 export type ISignUpApi = {
   data: {
@@ -13,7 +9,7 @@ export type ISignUpApi = {
   status: string;
 };
 
-export const signUpApi = async ({ email, password }: SignUpApiType) => {
+export const apiSignUp = async ({ email, password }: AuthFormTypes) => {
   const { data } = await apiClient.post<ISignUpApi>({
     uri: `/api/v1/auth`,
     body: { email, password },

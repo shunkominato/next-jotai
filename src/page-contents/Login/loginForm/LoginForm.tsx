@@ -20,7 +20,8 @@ export const LoginForm: FC = () => {
     validateInputOnChange: true,
   });
 
-  const { handleLogin, isLoading, isError } = useLogin();
+  const { handleLogin, isLoading, isError, isErrorEmailOrPassword } =
+    useLogin();
 
   return (
     <form className="mt-6" onSubmit={form.onSubmit(handleLogin)}>
@@ -39,6 +40,11 @@ export const LoginForm: FC = () => {
         radius="xs"
         {...form.getInputProps('password')}
       />
+      {isErrorEmailOrPassword && (
+        <Text fz="xs" c="red.6" mt="md">
+          メールアドレスまたはパスワードが間違っています。
+        </Text>
+      )}
       <div className="mt-10">
         <Button
           type="submit"

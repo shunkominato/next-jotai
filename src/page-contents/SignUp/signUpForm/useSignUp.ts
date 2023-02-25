@@ -6,7 +6,7 @@ import { AxiosError } from 'axios';
 import { userAtom } from '@/stores/user/userAtom';
 import { useSetAtom } from 'jotai';
 import { AuthFormTypes } from '@/validations/schema/auth/validation';
-import { signUpApi, ISignUpApi } from './signupApi';
+import { apiSignUp, ISignUpApi } from './apiSignup';
 
 export const useSignUp = () => {
   const router = useRouter();
@@ -18,7 +18,7 @@ export const useSignUp = () => {
     await router.push('/todo');
   };
 
-  const { mutate, isLoading, isError } = useMutation(signUpApi, {
+  const { mutate, isLoading, isError } = useMutation(apiSignUp, {
     onSuccess: onSuccessSignUp,
     onError: (err: AxiosError) => {
       errorHandler({ err });

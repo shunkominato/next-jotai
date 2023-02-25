@@ -5,7 +5,7 @@ import { errorHandler } from '@/util/errorHandler';
 import { AxiosError } from 'axios';
 import { userAtom } from '@/stores/user/userAtom';
 import { useSetAtom } from 'jotai';
-import { signUpApi, ISignUpApi } from '../signupApi';
+import { signUpApi, ISignUpApi } from '../apiSignup';
 import { SignUpFormTypes } from '../validation';
 
 export const useSignUpWithTwitter = () => {

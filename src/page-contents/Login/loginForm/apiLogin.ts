@@ -11,7 +11,7 @@ export interface ILoginApi {
 
 export const apiLogin = async ({ email, password }: AuthFormTypes) => {
   const { data } = await apiClient.post<ILoginApi>({
-    uri: `/api/v1/auth`,
+    uri: `/api/v1/auth/sign_in`,
     body: { email, password },
   });
   return data;
