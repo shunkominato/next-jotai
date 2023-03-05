@@ -1,6 +1,6 @@
 import { Todo } from '@/page-features/Todo';
 import { NextPage } from 'next';
-import { Layout } from 'src/layout/Layout';
+import { Layout } from '@/layouts/Layout';
 
 const TodoPage: NextPage = () => {
   return (

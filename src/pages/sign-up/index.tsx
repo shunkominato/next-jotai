@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import { Layout } from 'src/layout/Layout';
+import { Layout } from '@/layouts/Layout';
 import { SignUp } from '../../page-features/SignUp';
 
 const SignUpPage: NextPage = () => {

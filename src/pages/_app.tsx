@@ -2,7 +2,7 @@ import type { AppProps } from 'next/app';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import '../styles/globals.css';
-import { UiProvider } from '../lib/provider/UiProvider';
+import { UiProvider } from '../lib/providers/UiProvider';
 
 const queryClient = new QueryClient({
   defaultOptions: {
