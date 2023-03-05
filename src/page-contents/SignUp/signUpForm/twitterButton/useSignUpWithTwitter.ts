@@ -3,10 +3,10 @@ import { useMutation } from '@tanstack/react-query';
 import { useCallback } from 'react';
 import { errorHandler } from '@/util/errorHandler';
 import { AxiosError } from 'axios';
+import { AuthFormTypes } from '@/validations/schema/auth/validation';
 import { userAtom } from '@/stores/user/userAtom';
 import { useSetAtom } from 'jotai';
-import { signUpApi, ISignUpApi } from '../apiSignup';
-import { SignUpFormTypes } from '../validation';
+import { apiSignUp, ISignUpApi } from '../apiSignup';
 
 export const useSignUpWithTwitter = () => {
   const router = useRouter();
@@ -18,7 +18,7 @@ export const useSignUpWithTwitter = () => {
     await router.push('/todo');
   };
 
-  const { mutate, isLoading, isError } = useMutation(signUpApi, {
+  const { mutate, isLoading, isError } = useMutation(apiSignUp, {
     onSuccess: onSuccessSignUp,
     onError: (err: AxiosError) => {
       errorHandler({ err });
@@ -26,7 +26,7 @@ export const useSignUpWithTwitter = () => {
   });
 
   const handleSignUpWithTwitter = useCallback(
-    (signUpFormValue: SignUpFormTypes, ss: boolean, aa: string) => {
+    (signUpFormValue: AuthFormTypes, ss: boolean, aa: string) => {
       mutate({
         email: signUpFormValue.email,
         password: signUpFormValue.password,

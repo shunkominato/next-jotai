@@ -1,3 +1,5 @@
+// import { atom } from 'jotai';
+
 import { atom } from 'jotai';
 
 export interface UserState {
@@ -5,7 +7,7 @@ export interface UserState {
   name: string;
 }
 
-export const userAtom = atom({
+export const userAtom = atom<UserState>({
   userId: 0,
   name: 'test',
 });
